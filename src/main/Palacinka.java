@@ -11,17 +11,17 @@ public class Palacinka {
 		this.premaz = premaz;
 	}
 	
-	public void dodajPrilog(Prilog p) throws GSastojak {
-		for(int l = 0; l < prilozi.size(); l++)
-			if(prilozi.get(l).equals(p)) throw new GSastojak("Ne možete dodati isti prilog dvaput!");
+	public void dodajPrilog(Prilog prilog) throws GSastojak {
+		for(Prilog p : prilozi)
+			if(p.equals(prilog)) throw new GSastojak("Ne možete dodati isti prilog dvaput!");
 		
-		prilozi.add(p);
+		prilozi.add(prilog);
 	}
 	
 	public int getCena() {
 		int cena = premaz == Premaz.EUROKREM ? 100 : 70;
 		
-		for(int l = 0; l < prilozi.size(); l++) cena += prilozi.get(l).getCena();
+		for(Prilog p : prilozi) cena += p.getCena();
 		
 		return cena;
 	}
@@ -30,7 +30,7 @@ public class Palacinka {
 	public String toString() {
 		String opis = premaz == Premaz.EUROKREM ? "Eurokrem" : "Dzem";
 		
-		for(int l = 0; l < prilozi.size(); l++) opis += ", " + prilozi.get(l).imeSastojka();
+		for(Prilog p : prilozi) opis += ", " + p.imeSastojka();
 		
 		return opis;
 	}
