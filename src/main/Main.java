@@ -25,6 +25,21 @@ public class Main {
 		
 		Porudzbina por1 = new Porudzbina(),
 				por2 = new Porudzbina();
+		
+		por2.dodajPalacinku(pal);
+		
+		Palacinka pal2 = new Palacinka(Premaz.DZEM);
+		try {
+			pal2.dodajPrilog(p2);
+			pal2.dodajPrilog(p3);
+		} catch (GSastojak e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		por2.dodajPalacinku(pal2);
+		
+		System.out.println(por2.toString());
 	}
 
 }
