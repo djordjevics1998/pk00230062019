@@ -25,9 +25,6 @@ public class Main {
 		
 		Porudzbina por1 = new Porudzbina(),
 				por2 = new Porudzbina();
-		
-		System.out.println(por1.getId());
-		System.out.println(por2.getId());
 	}
 
 }

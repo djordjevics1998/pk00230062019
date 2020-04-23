@@ -18,6 +18,11 @@ public class Prilog {
 		return this.sastojak == p.sastojak;
 	}
 	
+	@Override
+	public boolean equals(Object obj) {
+		return obj instanceof Prilog && sastojak == ((Prilog)obj).sastojak;
+	}
+	
 	public String imeSastojka() {
 		switch(sastojak) {
 		case PLAZMA:
